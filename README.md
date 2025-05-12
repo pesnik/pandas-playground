@@ -16,6 +16,7 @@ A repository for hands-on experimentation and skill-building with the pandas lib
     * [Dependencies](#dependencies)
     * [Usage](#usage)
 * [Contents](#contents)
+* [Checklist](#Checklist)
 * [Contributing](#contributing)
 * [License](#license)
 * [Author](#author)
@@ -94,6 +95,43 @@ The repository covers the following pandas topics:
 * Time Series Analysis: Working with time series data (if applicable).
 * Data Visualization: Creating plots directly from pandas DataFrames and Series.
 * Exercises: Practice problems to reinforce your understanding of each topic.
+
+## Checklist
+
+This checklist outlines datasets and pandas concepts to master.
+
+### Datasets
+
+-   [ ] **Customer Transaction Dataset**
+    * Description: Contains records of customer purchases, including customer IDs, product IDs, purchase dates, amounts, and possibly store locations.
+    * Source: Kaggle, UCI Machine Learning Repository (if available), or synthetic data generation.
+-   [ ] **E-commerce Product Catalog**
+    * Description: A dataset of products sold online, with details like product IDs, categories, descriptions, prices, ratings, and stock levels.
+    * Source: Kaggle, web scraping (for practice), or synthetic data.
+-   [ ] **Social Media Engagement**
+    * Description: Data on social media posts, including post IDs, content, author IDs, timestamps, and metrics like likes, shares, and comments.
+    * Source: Platform APIs (for practice), Kaggle, or synthetic data.
+-   [ ] **Financial Market Data**
+    * Description: Time series data of stock prices, trading volumes, and other financial indicators.
+    * Source: Yahoo Finance, Pandas Data Reader, or specialized financial data providers.
+-   [ ] **Healthcare Records**
+    * Description: (Synthetic or de-identified) Data on patient information, including demographics, medical history, diagnoses, and treatment outcomes.
+    * Source: Synthetic data (for practice), or appropriately licensed healthcare datasets.
+-   [ ] **Geospatial Data**
+    * Description: Data containing geographic information, such as coordinates, city names, country codes, and potentially related information like population or economic data.
+    * Source: OpenStreetMap, GeoPandas, or government data sources.
+-   [ ] **Energy Consumption Data**
+    * Description: Data on energy usage, which could be at the level of households, businesses, or regions, with features like time, location, and consumption.
+    * Source: Government agencies, energy providers, or Kaggle.
+-   [ ] **Traffic Data**
+    * Description: Records of traffic flow, including information like timestamps, location, vehicle counts, and speed.
+    * Source: Government transportation agencies or Kaggle.
+-   [ ] **Weather Data**
+    * Description: Meteorological data, including temperature, precipitation, wind speed, and humidity, often recorded at specific locations and times.
+    * Source: NOAA, weather APIs, or Kaggle.
+-   [ ] **E-book Sales Data**
+    * Description: Data about e-book sales, including book titles, author, sales price, date of sale, and possibly customer demographics.
+    * Source: (Synthetic or real, if available)
 
 ## Contributing
 
