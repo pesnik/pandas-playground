@@ -26,6 +26,40 @@ def _():
 def _(pd):
     df = pd.read_excel("data/customer-transaction-dataset/Online Retail.xlsx")
     df
+    return (df,)
+
+
+@app.cell
+def _(df):
+    # add total price column
+    df['total_price'] = df['Quantity'] * df['UnitPrice']
+    df
+    return
+
+
+@app.cell
+def _(df):
+    # Top 5 countries by sell
+    country_group = df.groupby('Country')['total_price'].sum()
+    sort_by_price = country_group.to_frame().sort_values(by=['total_price'], ascending=False)
+    sort_by_price.nlargest(5, 'total_price')
+    return
+
+
+@app.cell
+def _(mo):
+    top_n = mo.ui.slider(1, 5)
+    top_n
+    return (top_n,)
+
+
+@app.cell
+def _(df, top_n):
+    # Top 5 customer in each country
+    country_customer_group = df.groupby(['Country', 'CustomerID'])['total_price'].sum()
+    country_wise_customers_buy = country_customer_group.to_frame().sort_values(['Country', 'total_price'], ascending=[True, False])
+
+    country_wise_customers_buy.groupby('Country').head(top_n.value)
     return
 
 
