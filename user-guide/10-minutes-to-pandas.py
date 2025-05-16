@@ -10,19 +10,6 @@ def _():
     return (mo,)
 
 
-@app.cell
-def _(pd):
-    import requests
-
-    internet_packages = requests.get('https://web-api.banglalink.net/api/v1/offers/prepaid/internet')
-    packs = internet_packages.json()
-    all_packs = packs['data'][0]['packs']
-
-    internet_packages_df = pd.DataFrame(all_packs)
-    internet_packages_df
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""### Basic Data Structure in Pandas""")
@@ -288,6 +275,99 @@ def _(mo):
 
 @app.cell
 def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""##### Pivot Table""")
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""##### Time Series""")
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""##### Categorical""")
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""##### Plotting""")
+    return
+
+
+@app.cell
+def _():
+    import matplotlib.pyplot as plt
+    return (plt,)
+
+
+@app.cell
+def _(np, pd):
+    ts = pd.DataFrame(np.random.randn(1000), index=pd.date_range("2025/05/15", periods=1000))
+    ts.cumsum().plot()
+    return (ts,)
+
+
+@app.cell
+def _(np, pd, plt, ts):
+    df = pd.DataFrame(
+        np.random.randn(1000, 4), index=ts.index, columns=["A", "B", "C", "D"]
+    )
+
+    df = df.cumsum()
+
+    # plt.figure();
+
+    df.plot();
+
+    plt.legend(loc='best');
+
+    plt.show();
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""#### Importing and exporting data""")
+    return
+
+
+@app.cell
+def _():
+    # df.read_csv("loc")
+    # df.to_csv("loc")
+    # df.to_parquet("loc")
+    # df.read_parquet("")
+    # df.read_excel("loc")
+    # df.to_excel("")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""#### Gotchas""")
     return
 
 
