@@ -50,11 +50,5 @@ def _(pd, requests):
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""# Robi""")
-    return
-
-
 if __name__ == "__main__":
     app.run()
