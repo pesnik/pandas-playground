@@ -132,5 +132,56 @@ def _(pd):
     return
 
 
+@app.cell
+def _():
+    # constructors
+
+    # Dataframe()
+    # pd.Dataframe.from_dict()
+    # pd.Dataframe.from_record()
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""### Assigning new columns in method chains""")
+    return
+
+
+@app.cell
+def _(pd):
+    ecom_df = pd.read_csv("data/customer-transaction-dataset/sample_dataset.csv")
+    ecom_df['Birthdate'] = pd.to_datetime(ecom_df['Birthdate'])
+    ecom_df['Date'] = pd.to_datetime(ecom_df['Date'])
+    ecom_df
+    return (ecom_df,)
+
+
+@app.cell
+def _(ecom_df):
+    ecom_df.assign(FullName=ecom_df['Name'] + ' ' + ecom_df['Surname'])
+    return
+
+
+@app.cell
+def _(ecom_df):
+    (
+        ecom_df
+            .query("Gender == 'F' or Gender == 'M'")
+            .assign(Gender=lambda df: df['Gender'].map({'F': 'Female', 'M': 'Male'}))
+            .groupby(['Category', 'Gender'])
+            .size()
+            .unstack(fill_value=0)
+            .plot(kind='bar', figsize=(10, 6), title="Gender Distribution by Category")
+    )
+    return
+
+
+@app.cell
+def _(ecom_df):
+    ecom_df.info()
+    return
+
+
 if __name__ == "__main__":
     app.run()
